@@ -1,0 +1,19 @@
+# Project Title: TodoLite - Minimalist Web Application
+
+## Description
+A simple, single-purpose web app (e.g., "To-Do List with Offline Support," "Recipe Finder," "Currency Converter"). Focus on clean code and good UX.
+
+## Key Features
+*   Simple and intuitive task management
+*   Add, edit, and delete to-do items
+*   Mark tasks as complete
+*   Clean user interface and good user experience
+
+## Technologies
+*   HTML, CSS, JavaScript (Frontend)
+*   Optional: Local Storage for persistence
+
+## Setup Instructions
+1.  Clone the repository: `git clone [repo-url]`
+2.  Navigate to the project directory: `cd TodoLite`
+3.  Open `index.html` in your web browser.

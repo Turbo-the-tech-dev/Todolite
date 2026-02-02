@@ -1,0 +1,601 @@
+[
+    {
+        "phase": "Week 0 – Strategic Framing",
+        "prompt_number": 1,
+        "prompt_text": "What is the one-sentence mission of this new app in 2025–2026 language?",
+        "elaboration": "Defining a concise mission statement is crucial for aligning the team and guiding all subsequent decisions. It forces clarity on the app's core purpose and value proposition, reflecting contemporary tech trends and user expectations."
+    },
+    {
+        "phase": "Week 0 – Strategic Framing",
+        "prompt_number": 2,
+        "prompt_text": "Who is the exact ideal first 100 users (age, job, pain, tools they already pay for)?",
+        "elaboration": "Hyper-targeting the initial user base allows for focused development and marketing efforts. Understanding their demographics, professional roles, pain points, and existing tech stack helps tailor features and messaging to achieve early adoption and strong feedback loops."
+    },
+    {
+        "phase": "Week 0 – Strategic Framing",
+        "prompt_number": 3,
+        "prompt_text": "What is the smallest possible ‘magic moment’ that must happen in the first 45 seconds?",
+        "elaboration": "Identifying the 'magic moment'—the core value proposition delivered almost instantly—is essential for user retention. This defines the minimum viable experience and focuses development on creating immediate impact and delight for new users."
+    },
+    {
+        "phase": "Week 0 – Strategic Framing",
+        "prompt_number": 4,
+        "prompt_text": "Which 1–2 direct competitors will we deliberately copy UI/UX patterns from (and why)?",
+        "elaboration": "Leveraging established UI/UX patterns from successful competitors can reduce cognitive load for users and accelerate development. The 'why' behind the copying ensures strategic adoption, focusing on patterns that are familiar, effective, and solve proven user problems."
+    },
+    {
+        "phase": "Week 0 – Strategic Framing",
+        "prompt_number": 5,
+        "prompt_text": "Which 1–2 competitors will we aggressively differentiate from (and how)?",
+        "elaboration": "Strategic differentiation is vital for carving out a unique market position. Clearly defining who to differentiate from, and *how* (e.g., features, pricing, target audience, technology), helps to highlight the app's unique selling points and avoid direct feature-for-feature competition."
+    },
+    {
+        "phase": "Week 0 – Strategic Framing",
+        "prompt_number": 6,
+        "prompt_text": "What is the unfair advantage or unique data/angle we have that almost nobody else does?",
+        "elaboration": "An 'unfair advantage' is a critical asset that provides sustainable competitive edge. This could be proprietary data, unique expertise, a novel technology, or an exclusive partnership, making it difficult for competitors to replicate the app's value."
+    },
+    {
+        "phase": "Week 0 – Strategic Framing",
+        "prompt_number": 7,
+        "prompt_text": "One primary monetization model for the first 18 months (be specific: $12/mo, $4.99 one-time + upsell, freemium + 9% transaction, etc.)",
+        "elaboration": "Defining the primary monetization model early and with specificity sets clear financial goals and informs product design. It ensures that value creation is directly tied to revenue generation, providing a sustainable path for the app's growth."
+    },
+    {
+        "phase": "Week 0 – Strategic Framing",
+        "prompt_number": 8,
+        "prompt_text": "What is the ‘North Star’ metric we will track above all others in month 1–6?",
+        "elaboration": "The 'North Star' metric is a single, crucial indicator of the app's success, reflecting the value delivered to customers. Focusing on one metric avoids analysis paralysis and ensures all team efforts are aligned towards a common, measurable goal in the early stages."
+    },
+    {
+        "phase": "Week 0 – Strategic Framing",
+        "prompt_number": 9,
+        "prompt_text": "What single word or phrase will become our internal project codename?",
+        "elaboration": "A project codename provides a short, memorable, and often inspiring internal identifier for the app. It fosters team identity, simplifies communication before official branding is finalized, and can help maintain focus on the core concept."
+    },
+    {
+        "phase": "Week 0 – Strategic Framing",
+        "prompt_number": 10,
+        "prompt_text": "Create 5–7 extremely different app names (brandable, domain .com/.app/.io available, no trademark red flags)",
+        "elaboration": "Brainstorming a diverse set of brandable names ensures flexibility and helps identify strong contenders early on. Checking for domain and trademark availability prevents future legal or branding complications, saving significant time and resources."
+    },
+    {
+        "phase": "Week 0 – Strategic Framing",
+        "prompt_number": 11,
+        "prompt_text": "Choose final name → check domain + X handle + Apple App Store + Google Play availability right now",
+        "elaboration": "Finalizing the app name requires immediate verification across all critical platforms. Securing matching handles and app store listings prevents brand fragmentation and ensures a consistent user experience from the outset, crucial for market entry."
+    },
+    {
+        "phase": "Week 0 – Strategic Framing",
+        "prompt_number": 12,
+        "prompt_text": "Write the 140-character pitch we would use if Elon reposted us tomorrow",
+        "elaboration": "Crafting a compelling, concise pitch forces extreme clarity on the app's value proposition. The 140-character constraint prepares for high-impact, viral communication, distilling the app's essence into a message that resonates instantly with a broad audience."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 13,
+        "prompt_text": "Create new GitHub repo → owner/org? → name = final-app-name or codename?",
+        "elaboration": "Establishing the GitHub repository is the first technical step, setting the foundation for version control and collaboration. Deciding on the owner/organization and the repo naming convention (final app name for clarity, codename for secrecy/flexibility) impacts project visibility and branding."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 14,
+        "prompt_text": "Initialize repo: git init / README.md / .gitignore (which template: node, rust, flutter, nextjs, tauri, etc.)",
+        "elaboration": "Proper repository initialization ensures a clean, functional starting point. Including a basic README.md for immediate context and a relevant .gitignore template (e.g., Node, Python, Rust) prevents unnecessary files from being committed, maintaining repository hygiene and focus."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 15,
+        "prompt_text": "Choose license: MIT, Apache 2.0, AGPL, proprietary for now?",
+        "elaboration": "Selecting an appropriate software license defines how others can use, modify, and distribute the codebase. This legal decision impacts open-source compatibility, commercial use, and intellectual property rights, requiring careful consideration based on the project's goals and long-term strategy."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 16,
+        "prompt_text": "Create initial repo structure folders (decide monorepo vs multi-repo early)",
+        "elaboration": "Establishing a logical folder structure from the start organizes the codebase and facilitates scalability. An early decision on monorepo (single repository for multiple projects) versus multi-repo (separate repositories) impacts tooling, dependency management, and team workflow significantly."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 17,
+        "prompt_text": "Write first README.md headline + 3-line description + badge placeholders",
+        "elaboration": "A compelling README.md provides immediate project context. The initial headline and description communicate the app's purpose, while badge placeholders (e.g., CI status, license) signal professionalism and readiness for integration, even in early stages."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 18,
+        "prompt_text": "Add .github/ folder with PULL_REQUEST_TEMPLATE.md and ISSUE_TEMPLATE/bug.yml",
+        "elaboration": "Standardizing contribution processes improves collaboration and maintainability. PULL_REQUEST_TEMPLATE.md guides code submissions, and ISSUE_TEMPLATE/bug.yml streamlines bug reporting, ensuring clarity, completeness, and reducing friction for contributors."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 19,
+        "prompt_text": "Decide early CI provider: GitHub Actions, CircleCI, or none yet?",
+        "elaboration": "Choosing a Continuous Integration (CI) provider early integrates automated testing and deployment into the development workflow. This decision impacts team efficiency, code quality, and release cadence, even if a minimal setup is initially deployed."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 20,
+        "prompt_text": "Create first .github/workflows/ci.yml (even if empty stages)",
+        "elaboration": "Setting up the initial CI workflow file (e.g., .github/workflows/ci.yml) establishes the automation pipeline's structure. Even with empty stages, it signals the intent for automated checks and deployments, providing a clear path for future CI/CD development."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 21,
+        "prompt_text": "Set up basic SECURITY.md file with contact email",
+        "elaboration": "A SECURITY.md file informs users and researchers how to report vulnerabilities responsibly. Providing a contact email demonstrates a commitment to security, builds trust, and helps mitigate risks by establishing a clear communication channel for security concerns."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 22,
+        "prompt_text": "Decide on contribution guide → create CONTRIBUTING.md stub",
+        "elaboration": "A contribution guide (CONTRIBUTING.md) sets expectations for external contributions, clarifying coding standards, submission processes, and community guidelines. Even a stub indicates readiness for collaboration and outlines initial parameters for engaging with the project."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 23,
+        "prompt_text": "Create .env.example with all future variables (even if you don’t know them yet)",
+        "elaboration": "A .env.example file serves as a blueprint for required environment variables, ensuring consistent local development setups and preventing configuration errors. Listing all anticipated variables early, even if unknown, aids future planning and onboarding."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 24,
+        "prompt_text": "Add .prettierrc / biome.json / eslint.config.js / rustfmt.toml → whatever fits stack",
+        "elaboration": "Integrating code formatting and linting tools (e.g., Prettier, Biome, ESLint, Rustfmt) enforces consistent code style across the team. This reduces merge conflicts, improves readability, and maintains code quality automatically, aligning with the chosen tech stack."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 25,
+        "prompt_text": "Commit initial structure with message: \"chore: bootstrap repository structure\"",
+        "elaboration": "The first commit, with a clear message like 'chore: bootstrap repository structure,' marks the foundational setup. It establishes a clean baseline for future development, providing a recognizable starting point and documenting the initial architectural decisions."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 26,
+        "prompt_text": "Create private linear / jira / github projects board → set 4 columns minimum",
+        "elaboration": "Setting up a project board (e.g., Linear, Jira, GitHub Projects) provides a visual workflow for task management and progress tracking. A minimum of four columns (e.g., To Do, In Progress, Review, Done) ensures basic visibility and facilitates agile development practices."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 27,
+        "prompt_text": "Decide on version bumping strategy: semver, calver, or git-tag-count based?",
+        "elaboration": "Choosing a version bumping strategy (e.g., Semantic Versioning, Calendar Versioning) ensures consistent and predictable release numbering. This decision impacts how changes are communicated, how dependencies are managed, and how users perceive the stability and evolution of the app."
+    },
+    {
+        "phase": "Week 0.5 – repo + legal + structure",
+        "prompt_number": 28,
+        "prompt_text": "Tag v0.0.0 or v0.1.0-initial-bootstrap right now",
+        "elaboration": "Creating an initial Git tag (e.g., v0.0.0 or v0.1.0-initial-bootstrap) marks the project's very first release point or a significant bootstrap state. It provides a clear historical reference, enabling easy rollback or comparison, and signifies the start of the versioning lifecycle."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 29,
+        "prompt_text": "Final tech stack decision: language + framework + bundler + target platforms (web, ios, android, desktop, cli hybrid?)",
+        "elaboration": "Solidifying the entire tech stack (programming language, core framework, module bundler, and target deployment platforms) is a foundational decision. This choice dictates development tooling, talent acquisition, scalability options, and the overall feasibility of achieving the app's vision."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 30,
+        "prompt_text": "Choose state management: zustand, jotai, redux, effector, riverpod, bloc, mobx, none (react compiler)?",
+        "elaboration": "Selecting a state management solution (e.g., Zustand, Redux) is critical for handling application data flow, especially in complex UIs. The choice impacts development complexity, performance, and maintainability, aligning with the chosen frontend framework and team preferences."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 31,
+        "prompt_text": "Choose UI library / design system base: shadcn/ui, mantine, chakra, tamagui, nativewind + tailwind, vanilla extract + recipes, mui, flutter material/cupertino?",
+        "elaboration": "Deciding on a UI library or design system base (e.g., Shadcn/ui, Material-UI) establishes the app's visual and interactive consistency. This choice accelerates UI development, ensures accessibility, and provides a cohesive user experience across all components."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 32,
+        "prompt_text": "Decide on styling approach: tailwind, css modules, vanilla css, linaria, panda-css, vanilla-extract, styled-components, emotion, stitches?",
+        "elaboration": "The styling approach (e.g., Tailwind CSS, CSS Modules) dictates how the app's visual presentation is managed. This decision affects development speed, maintainability of styles, potential for reusability, and integration with the chosen UI framework."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 33,
+        "prompt_text": "Monorepo tool if needed: turbo, nx, lage, rush, moonrepo, none?",
+        "elaboration": "If opting for a monorepo strategy, selecting a monorepo tool (e.g., Turborepo, Nx) is essential for efficient management of multiple projects within a single repository. It provides capabilities for caching, task orchestration, and dependency management, crucial for large-scale development."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 34,
+        "prompt_text": "Package manager lockfile choice: pnpm, bun, yarn berry, npm?",
+        "elaboration": "The choice of package manager and its lockfile (e.g., pnpm, Yarn Berry) influences dependency resolution, installation speed, and overall project consistency. A robust lockfile ensures reproducible builds across different environments and team members."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 35,
+        "prompt_text": "Create first package.json / pubspec.yaml / Cargo.toml with name, version, description",
+        "elaboration": "Initializing the project's manifest file (e.g., package.json for Node.js, pubspec.yaml for Flutter, Cargo.toml for Rust) is a fundamental step. It defines the project's metadata (name, version, description), sets up its build process, and declares dependencies."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 36,
+        "prompt_text": "Set up development database choice: sqlite (local), postgres (docker), supabase, firebase, planetscale, neon, mongodb atlas, surrealdb, duckdb?",
+        "elaboration": "Selecting a development database is crucial for local data persistence and testing. The choice (e.g., SQLite for simplicity, PostgreSQL in Docker for production parity) impacts setup complexity, data modeling, and eventual deployment strategy."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 37,
+        "prompt_text": "Choose auth provider: clerk, auth0, supabase auth, better-auth, nextauth v5, lucia, firebase auth, own JWT system?",
+        "elaboration": "Deciding on an authentication provider (e.g., Clerk, Auth0, Firebase Auth) impacts security, user management, and development effort. The choice depends on scalability needs, ease of integration, and the level of customization required for user authentication flows."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 38,
+        "prompt_text": "Decide on backend if separate: nextjs api routes, hono, express, fastify, nestjs, go, rust axum, python fastapi, none (edge functions only)?",
+        "elaboration": "Determining the backend strategy, if a separate service is needed beyond edge functions, is a key architectural decision. The choice of framework/language (e.g., FastAPI, Node.js Express, Rust Axum) impacts performance, development speed, and suitability for specific application requirements."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 39,
+        "prompt_text": "Choose deployment target(s) for MVP: vercel, netlify, fly.io, railway, render, aws amplify, cloudflare pages/workers, caprover, coolify?",
+        "elaboration": "Selecting the initial deployment target for the MVP (e.g., Vercel, Netlify, Fly.io) defines the production environment and influences CI/CD setup. The choice depends on ease of use, scalability, cost, and specific features offered (e.g., serverless functions, global CDN)."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 40,
+        "prompt_text": "Create docker-compose.yml for local dev (db + cache + mailcatcher + anything else)",
+        "elaboration": "A docker-compose.yml file standardizes the local development environment, bundling services like databases, caches, and mail catchers. This ensures consistency across development machines, simplifies onboarding for new team members, and mirrors production environments more closely."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 41,
+        "prompt_text": "Set up first Dockerfile(s) — even if multi-stage is overkill now",
+        "elaboration": "Creating initial Dockerfile(s) containerizes the application, ensuring consistent execution across development, staging, and production environments. Even a basic Dockerfile lays the groundwork for robust CI/CD pipelines and simplifies deployment, abstracting away environmental differences."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 42,
+        "prompt_text": "Write initial API design: 5–9 most important endpoints (REST or tRPC or graphql?)",
+        "elaboration": "Designing the initial API with 5-9 core endpoints (whether REST, tRPC, or GraphQL) focuses development on essential functionalities. This structure guides frontend-backend communication, defines data contracts, and allows for parallel development, crucial for rapid MVP creation."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 43,
+        "prompt_text": "Decide on API schema tool: tRPC, zodios, openapi, json schema, none yet",
+        "elaboration": "Choosing an API schema tool (e.g., tRPC for type safety, OpenAPI for documentation) enforces consistency and provides a single source of truth for API contracts. This reduces integration errors, improves developer experience, and facilitates robust client-server communication."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 44,
+        "prompt_text": "Create first data model / schema (prisma, drizzle, typebox, zod, knex, sqlalchemy, sea-orm?)",
+        "elaboration": "Defining the initial data model or schema (e.g., Prisma, Drizzle) structures how data is stored and accessed. This foundational step ensures data integrity, consistency, and sets the stage for efficient database interactions, aligning with the chosen database technology."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 45,
+        "prompt_text": "Run first migration or schema push",
+        "elaboration": "Executing the first database migration or schema push applies the defined data model to the database. This critical step sets up the persistence layer, allowing the application to store and retrieve data, and validates the connection between the app and its database."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 46,
+        "prompt_text": "Create first test file (vitest, jest, playwright, pytest, cargo test?)",
+        "elaboration": "Writing the first test file with a chosen framework (e.g., Vitest, Pytest) integrates testing into the development cycle from day one. This establishes a culture of quality, validates core functionalities, and provides a safety net for future code changes."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 47,
+        "prompt_text": "Write one smoke test that always passes",
+        "elaboration": "A simple smoke test that always passes confirms the basic health and functionality of the application. It acts as a quick confidence check, ensuring the core setup is operational and preventing significant regressions from going unnoticed in early development stages."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 48,
+        "prompt_text": "Set up first logger: consola, pino, winston, tracing (rust), loguru?",
+        "elaboration": "Integrating a logging system (e.g., Consola, Pino, Loguru) provides visibility into the application's runtime behavior. This is crucial for debugging, monitoring, and understanding how the app performs in various environments, enabling quick identification and resolution of issues."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 49,
+        "prompt_text": "Decide on error handling & reporting: sentry, logtail, bugsnag, own endpoint?",
+        "elaboration": "Establishing a robust error handling and reporting mechanism (e.g., Sentry, Bugsnag) ensures that application errors are captured, tracked, and prioritized. This proactive approach to error management is vital for maintaining application stability and improving user experience."
+    },
+    {
+        "phase": "Week 1 – Foundation & Architecture",
+        "prompt_number": 50,
+        "prompt_text": "Commit everything with message: \"feat: initial architecture & local dev environment\"",
+        "elaboration": "Committing the foundational architecture and local development environment signifies a major project milestone. The message 'feat: initial architecture & local dev environment' clearly documents this significant step, providing a stable base for building out core features."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 51,
+        "prompt_text": "Create 3 moodboards on Pinterest / Are.na / Milanote for visual direction",
+        "elaboration": "Developing moodboards is essential for establishing the app's visual identity and aesthetic. By exploring different styles on platforms like Pinterest, the team can align on a shared creative vision, setting the tone for UI/UX design and brand perception."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 52,
+        "prompt_text": "Choose primary color palette (oklch, tailwind default, custom 5-scale)",
+        "elaboration": "Selecting a primary color palette defines the app's visual foundation and emotional resonance. Whether using modern color spaces like OKLCH, a framework's defaults, or a custom scale, this decision ensures consistent branding and guides UI component styling."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 53,
+        "prompt_text": "Decide on typography stack: system fonts, google fonts, custom variable font?",
+        "elaboration": "Choosing the typography stack (system fonts, Google Fonts, or custom variable fonts) dictates the app's readability and overall aesthetic. This decision impacts user experience, brand personality, and performance, requiring a balance between style and practicality."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 54,
+        "prompt_text": "Create first Figma frame: mobile onboarding flow (3–6 screens)",
+        "elaboration": "Designing the mobile onboarding flow in Figma is crucial for guiding new users through the app's initial experience. Focusing on 3-6 screens ensures a streamlined, intuitive introduction, minimizing friction and maximizing the chances of successful user adoption."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 55,
+        "prompt_text": "Design 404 page before anything else (fun tone setter)",
+        "elaboration": "Designing a creative and user-friendly 404 page early on demonstrates attention to detail and reinforces brand personality, even in error states. A well-crafted 404 can turn potential frustration into a positive brand interaction, guiding users back to relevant content."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 56,
+        "prompt_text": "Pick icon set family: lucide, heroicons, remixicon, phosphor, tabler, hugeicons?",
+        "elaboration": "Selecting an icon set family (e.g., Lucide, Heroicons) ensures visual consistency and accessibility across the app's interface. This choice impacts UI clarity, development speed (through pre-built components), and overall aesthetic harmony."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 57,
+        "prompt_text": "Decide on animation library: framer-motion, motion one, gsap, react-spring, none?",
+        "elaboration": "Choosing an animation library (e.g., Framer Motion, GSAP) is key for adding engaging and intuitive transitions and micro-interactions. This decision influences the app's perceived responsiveness, user delight, and overall polish, contributing significantly to UX."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 58,
+        "prompt_text": "Create brand assets brief: logo (wordmark + icon), favicon, app icon sizes, twitter card image",
+        "elaboration": "Developing a comprehensive brand assets brief ensures all visual elements are consistent across platforms. Specifying requirements for the logo, favicon, app icons, and social media imagery (e.g., Twitter card) establishes a strong, unified brand presence."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 59,
+        "prompt_text": "Generate or commission 3 logo variations (use AI + manual cleanup)",
+        "elaboration": "Exploring multiple logo variations, potentially leveraging AI for initial generation and then manual refinement, provides diverse options for the brand identity. This iterative approach helps refine the visual representation of the app's mission and values."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 60,
+        "prompt_text": "Choose final logo variant → export @1x @2x @3x svg/png",
+        "elaboration": "Finalizing the logo and exporting it in various resolutions and formats (e.g., @1x, @2x, @3x SVG/PNG) ensures crisp display across all devices and platforms. This step guarantees professional visual quality and readiness for implementation."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 61,
+        "prompt_text": "Create simple PRD-lite doc (Notion / markdown): problem, solution, user stories, non-goals",
+        "elaboration": "A concise Product Requirements Document (PRD-lite) clarifies the app's core problem, proposed solution, key user stories, and explicit non-goals. This ensures alignment between product, design, and engineering teams, focusing efforts on essential MVP features."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 62,
+        "prompt_text": "List 3 core user stories for MVP (As a __ I want __ so that __)",
+        "elaboration": "Defining 3 core user stories for the MVP (Minimum Viable Product) helps articulate the primary user needs and desired outcomes. This user-centric approach ensures that initial development efforts directly address key value propositions, driving early user satisfaction."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 63,
+        "prompt_text": "Write cynical ‘what will kill this app in 90 days’ list (be brutal)",
+        "elaboration": "Engaging in a 'pre-mortem' exercise by brutally listing potential failure points in the first 90 days helps identify and proactively mitigate critical risks. This Black Hat thinking approach forces the team to confront vulnerabilities and plan for resilience."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 64,
+        "prompt_text": "Write opposite ‘what would make this app go viral’ list",
+        "elaboration": "Brainstorming elements that could drive viral growth encourages Green Hat creative thinking about distribution and user engagement. This exercise focuses on unique features, compelling narratives, or innovative sharing mechanisms that could significantly amplify the app's reach."
+    },
+    {
+        "phase": "Week 1.5 – Design & Brand kickoff",
+        "prompt_number": 65,
+        "prompt_text": "Commit design system first components or tokens",
+        "elaboration": "Committing the initial design system components or tokens establishes a reusable foundation for the app's UI. This accelerates future development, ensures visual consistency, and facilitates easy updates to the app's look and feel, aligning design with code."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 66,
+        "prompt_text": "Scaffold first screen / page / view users will see after sign-in",
+        "elaboration": "Scaffolding the main post-sign-in screen quickly establishes the primary user interface. This foundational view provides the canvas for building the core functionalities and serves as the immediate entry point for users to experience the app's value."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 67,
+        "prompt_text": "Implement first auth flow end-to-end (sign-up or sign-in)",
+        "elaboration": "Implementing a complete authentication flow (sign-up or sign-in) is critical for securing user access and personalizing the app experience. An end-to-end working flow validates the chosen auth provider and backend integration, enabling user management."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 68,
+        "prompt_text": "Create loading states / skeletons for the main screen",
+        "elaboration": "Designing effective loading states or skeletons for the main screen improves perceived performance and user experience. It provides visual feedback during data fetching, reducing frustration and making the app feel more responsive and polished."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 69,
+        "prompt_text": "Build the #1 core action/feature that delivers the magic moment",
+        "elaboration": "Focusing development on the single most critical action or feature that delivers the app's 'magic moment' ensures the MVP provides immediate value. This prioritizes the core utility, validating the app's hypothesis and driving early user engagement."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 70,
+        "prompt_text": "Add optimistic updates + rollback on that core action",
+        "elaboration": "Implementing optimistic updates (showing UI changes immediately while awaiting server response) enhances responsiveness and user satisfaction. Incorporating rollback mechanisms ensures data consistency and a graceful recovery if the server operation fails."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 71,
+        "prompt_text": "Implement first real-time feature (if applicable): websocket, supabase realtime, partykit, liveblocks, firebase?",
+        "elaboration": "Integrating a real-time feature (e.g., WebSockets, Supabase Realtime) allows for immediate data synchronization and collaborative experiences. This enriches the app's interactivity, providing dynamic updates and improving user engagement for relevant use cases."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 72,
+        "prompt_text": "Add dark mode toggle (localStorage + system preference)",
+        "elaboration": "Providing a dark mode toggle, respecting system preferences and user choice, enhances accessibility and user comfort. This feature reflects modern UI expectations, reduces eye strain, and offers personalization, improving the overall user experience."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 73,
+        "prompt_text": "Create first mobile responsive breakpoint test",
+        "elaboration": "Establishing a mobile responsive breakpoint test early on ensures the app's layout adapts correctly to different screen sizes. This verifies the core responsiveness of the UI, preventing layout issues and providing a consistent experience across mobile devices."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 74,
+        "prompt_text": "Write first e2e test for happy path core loop",
+        "elaboration": "Writing the first end-to-end (e2e) test for the core loop's 'happy path' validates the entire system's functionality. This critical test ensures that the most important user journey works as expected, providing confidence in the app's primary value delivery."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 75,
+        "prompt_text": "Add basic analytics (posthog, umami, plausible, mixpanel, amplitude?)",
+        "elaboration": "Integrating basic analytics (e.g., PostHog, Plausible) from the start provides crucial insights into user behavior and app performance. This data drives informed product decisions, tracks key metrics, and helps optimize the user experience post-launch."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 76,
+        "prompt_text": "Implement first error boundary + user-friendly error messages",
+        "elaboration": "Implementing error boundaries and displaying user-friendly error messages improves the app's resilience and user experience. It prevents application crashes from breaking the entire UI and guides users with clear, actionable information when issues occur."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 77,
+        "prompt_text": "Add first keyboard shortcuts (if web/desktop app)",
+        "elaboration": "Adding initial keyboard shortcuts, especially for web or desktop apps, significantly enhances productivity and user experience for power users. This feature demonstrates thoughtful design, accelerates common actions, and provides a more seamless interaction model."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 78,
+        "prompt_text": "Create shareable deep-link or invite link system stub",
+        "elaboration": "Establishing a shareable deep-link or invite link system stub early on facilitates organic growth and user acquisition. This mechanism allows users to easily share content or invite others, building virality into the app's core functionality."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_text": "Build ‘share your result’ / social proof card generator",
+        "elaboration": "Developing a 'share your result' or social proof card generator capitalizes on user-generated content for marketing. This feature enables users to easily showcase their achievements or creations within the app, fostering engagement and providing valuable social proof for new users."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 80,
+        "prompt_text": "Add first i18n stub (even english-only with future-proof structure)",
+        "elaboration": "Implementing an i18n (internationalization) stub, even if initially English-only, creates a future-proof structure for multi-language support. This proactive step simplifies localization efforts down the line, enabling global reach without significant refactoring."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 81,
+        "prompt_text": "Create first settings page with 3–5 toggles",
+        "elaboration": "Designing an initial settings page with a few essential toggles empowers users with basic customization options. This demonstrates responsiveness to user preferences and provides a dedicated space for future configuration expansions, enhancing user control."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 82,
+        "prompt_text": "Implement first form with validation + server actions / react-hook-form + zod",
+        "elaboration": "Implementing a foundational form with robust validation (e.g., using Zod with React Hook Form or server actions) ensures data integrity and a smooth user input experience. This critical component handles user interactions and integrates with backend logic reliably."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 83,
+        "prompt_text": "Add first confetti / micro-interaction on success",
+        "elaboration": "Integrating a simple confetti animation or micro-interaction upon successful completion of a key action enhances user delight and provides positive reinforcement. These small visual cues improve the emotional experience and make the app feel more engaging."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 84,
+        "prompt_text": "Record 45-second demo video of current core loop",
+        "elaboration": "Recording a concise 45-second demo video of the working core loop provides a tangible artifact of progress. This visual demonstration is invaluable for internal team alignment, soliciting early feedback, and serves as a powerful marketing asset for early teasers."
+    },
+    {
+        "phase": "Week 2–3 – Build Core Loop",
+        "prompt_number": 85,
+        "prompt_text": "Commit: \"feat: mvp core loop complete\"",
+        "elaboration": "Committing the completed MVP core loop signifies a major development milestone. The commit message 'feat: mvp core loop complete' clearly documents the achievement of the app's foundational functionality, providing a stable base for polish and release."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 86,
+        "prompt_text": "Run Lighthouse score on mobile & desktop → fix critical issues",
+        "elaboration": "Running a Lighthouse audit for performance, accessibility, and SEO on both mobile and desktop identifies critical issues impacting user experience. Addressing these issues ensures a high-quality, performant, and discoverable application before launch, crucial for early adoption."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 87,
+        "prompt_text": "Create robots.txt + sitemap.xml + basic SEO meta tags",
+        "elaboration": "Setting up robots.txt, sitemap.xml, and essential SEO meta tags is fundamental for search engine discoverability. These elements guide crawlers, help index content effectively, and improve the app's visibility in search results, critical for organic growth."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 88,
+        "prompt_text": "Add PWA manifest + service worker stub (if web)",
+        "elaboration": "For web applications, adding a PWA manifest and a service worker stub enhances user experience by enabling offline capabilities, push notifications, and home screen installation. This transforms the web app into a more app-like experience, improving engagement."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 89,
+        "prompt_text": "Test on 3 real devices + 2 browsers minimum",
+        "elaboration": "Thorough cross-device and cross-browser testing ensures consistent functionality and appearance across the target user base. This critical QA step identifies and resolves compatibility issues, guaranteeing a reliable and polished experience for all users."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 90,
+        "prompt_text": "Create first beta invite list (google sheet or database table)",
+        "elaboration": "Establishing a beta invite list (e.g., via Google Sheet or database) is crucial for managing early access and gathering targeted feedback. This structured approach helps organize potential testers and streamline the onboarding process for the initial launch."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 91,
+        "prompt_text": "Write first changelog.md or CHANGELOG.md entry",
+        "elaboration": "Creating an initial changelog entry (CHANGELOG.md) documents the changes and new features included in the first release. This provides transparency to users and contributors, signaling active development and communicating the value delivered in each version."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 92,
+        "prompt_text": "Deploy staging environment → smoke test there",
+        "elaboration": "Deploying to a staging environment before production allows for final testing in a realistic setting. Conducting a smoke test verifies core functionality on the deployed version, catching environment-specific issues and ensuring readiness for live deployment."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 93,
+        "prompt_text": "Deploy to production for the first time (v0.1.0)",
+        "elaboration": "The first production deployment (v0.1.0) is a major milestone, making the app live for real users. This step marks the transition from development to a publicly available product, initiating the feedback loop and real-world usage."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 94,
+        "prompt_text": "Announce internally / to 5 friends → get first feedback",
+        "elaboration": "Announcing the launch to a trusted internal circle or a small group of friends is crucial for obtaining initial, honest feedback. This controlled release provides valuable insights into usability, bugs, and overall impression before a wider audience engagement."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 95,
+        "prompt_text": "Create first feedback form (typeform, tally, discord channel?)",
+        "elaboration": "Setting up a dedicated feedback mechanism (e.g., Typeform, Discord channel) provides a structured way to collect user input. This ensures that user suggestions, bug reports, and general impressions are efficiently gathered and actionable for future iterations."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 96,
+        "prompt_text": "Set up basic monitoring: uptime check + error rate alert",
+        "elaboration": "Implementing basic monitoring for uptime and error rates is essential for maintaining application reliability and quickly responding to issues. This proactive approach ensures the app remains available and functional, minimizing downtime and negative user impact."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 97,
+        "prompt_text": "Write post-mortem template for future use",
+        "elaboration": "Creating a post-mortem template standardizes the process of analyzing incidents or failures. This document ensures that lessons are learned from every issue, facilitating continuous improvement in operations, reliability, and incident response across the team."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 98,
+        "prompt_text": "Plan v0.2.0 features list (keep under 7 items)",
+        "elaboration": "Planning the next iteration's features (v0.2.0), ideally keeping the list concise (under 7 items), maintains focus and agility. This iterative approach ensures continuous value delivery based on feedback, preventing scope creep and keeping development cycles manageable."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 99,
+        "prompt_text": "Tweet / post first teaser with app name + codename story",
+        "elaboration": "Releasing a first teaser on social media, using the app name and a hint of its codename story, generates early buzz and builds anticipation. This marketing step engages potential users, establishes brand identity, and leverages curiosity for early adoption."
+    },
+    {
+        "phase": "Week 4 – Polish, Ship & Learn",
+        "prompt_number": 100,
+        "prompt_text": "Celebrate → take screenshot of working app → go for a walk → come back next Monday and repeat with v0.2 → v0.3 → …",
+        "elaboration": "Celebrating milestones is crucial for team morale and preventing burnout. Taking a screenshot captures the achievement, a walk provides a mental reset, and the planned iterative cycle (v0.2, v0.3) reinforces a sustainable, continuous development mindset. It's a holistic approach to productivity and well-being."
+    }
+]
