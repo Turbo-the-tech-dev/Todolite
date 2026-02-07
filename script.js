@@ -5,7 +5,15 @@ const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
 
 // Load tasks from local storage on page load
-let tasks = JSON.parse(localStorage.getItem('todoLiteTasks')) || [];
+let tasks = [];
+try {
+    tasks = JSON.parse(localStorage.getItem('todoLiteTasks')) || [];
+} catch (e) {
+    console.error("Error parsing tasks from localStorage:", e);
+    // If parsing fails, clear localStorage for this key and start with an empty array
+    localStorage.removeItem('todoLiteTasks');
+    tasks = [];
+}
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
