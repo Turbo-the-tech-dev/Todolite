@@ -4,6 +4,8 @@ const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
 
+const MAX_TASK_LENGTH = 200; // Define max length for tasks
+
 // Load tasks from local storage on page load
 let tasks = [];
 try {
@@ -37,6 +39,12 @@ function addTask() {
     if (taskText === '') {
         alert('Please enter a task!');
         return;
+    }
+    
+    // Truncate taskText if it exceeds MAX_TASK_LENGTH
+    if (taskText.length > MAX_TASK_LENGTH) {
+        alert(`Task is too long! Maximum length is ${MAX_TASK_LENGTH} characters. Your task has been truncated.`);
+        taskText = taskText.substring(0, MAX_TASK_LENGTH);
     }
     
     const task = {
@@ -79,7 +87,12 @@ function editTask(id) {
     const newText = prompt('Edit task:', task.text);
     
     if (newText !== null && newText.trim() !== '') {
-        task.text = newText.trim();
+        newText = newText.trim();
+        if (newText.length > MAX_TASK_LENGTH) {
+            alert(`Edited task is too long! Maximum length is ${MAX_TASK_LENGTH} characters. Your edit has been truncated.`);
+            newText = newText.substring(0, MAX_TASK_LENGTH);
+        }
+        task.text = newText;
         saveTasks();
         renderTasks();
     }
