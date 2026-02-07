@@ -40,7 +40,7 @@ function addTask() {
     }
     
     const task = {
-        id: Date.now(),
+        id: Date.now() + Math.random().toString(36).substring(2, 9), // Generate a more unique ID
         text: taskText,
         completed: false
     };
