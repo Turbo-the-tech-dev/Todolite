@@ -1,84 +1,548 @@
+/* ============================
+   CSS Custom Properties (Theming)
+   ============================ */
+:root {
+    --bg-primary: #f4f4f4;
+    --bg-card: #fff;
+    --bg-task: #f9f9f9;
+    --bg-task-completed: #e9e9e9;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --text-muted: #999;
+    --border-color: #ddd;
+    --border-light: #eee;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --btn-add: #5cb85c;
+    --btn-add-hover: #4cae4c;
+    --btn-delete: #d9534f;
+    --btn-delete-hover: #c9302c;
+    --btn-edit: #5bc0de;
+    --btn-edit-hover: #46b8da;
+    --btn-secondary: #777;
+    --btn-secondary-hover: #555;
+    --priority-high: #d9534f;
+    --priority-medium: #f0ad4e;
+    --priority-low: #5cb85c;
+    --tag-bg: #e8e8e8;
+    --tag-text: #555;
+    --overdue-bg: #fff0f0;
+    --overdue-border: #f5c6c6;
+    --input-bg: #fff;
+    --input-border: #ddd;
+    --filter-bg: #f0f0f0;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --bg-primary: #121212;
+    --bg-card: #1e1e1e;
+    --bg-task: #2a2a2a;
+    --bg-task-completed: #1a1a1a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --text-muted: #777;
+    --border-color: #3a3a3a;
+    --border-light: #333;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --btn-add: #4cae4c;
+    --btn-add-hover: #5cb85c;
+    --btn-delete: #c0392b;
+    --btn-delete-hover: #e74c3c;
+    --btn-edit: #2980b9;
+    --btn-edit-hover: #3498db;
+    --btn-secondary: #888;
+    --btn-secondary-hover: #aaa;
+    --priority-high: #e74c3c;
+    --priority-medium: #f39c12;
+    --priority-low: #27ae60;
+    --tag-bg: #3a3a3a;
+    --tag-text: #ccc;
+    --overdue-bg: #3d1a1a;
+    --overdue-border: #5a2a2a;
+    --input-bg: #2a2a2a;
+    --input-border: #3a3a3a;
+    --filter-bg: #2a2a2a;
+}
+
+/* ============================
+   Base Styles
+   ============================ */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: sans-serif;
-    background-color: #f4f4f4;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
     margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-card);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px var(--shadow-color);
     width: 100%;
-    max-width: 400px;
+    max-width: 560px;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-h1 {
+/* ============================
+   Header
+   ============================ */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
     text-align: center;
-    color: #333;
+    color: var(--text-primary);
+    margin: 0;
+    font-size: 1.8em;
 }
 
+.icon-btn {
+    background: none;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1.4em;
+    cursor: pointer;
+    padding: 6px 10px;
+    color: var(--text-primary);
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.icon-btn:hover {
+    background-color: var(--filter-bg);
+    border-color: var(--text-muted);
+}
+
+/* ============================
+   Add Task Form
+   ============================ */
 .todo-input {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
+    gap: 8px;
 }
 
 .todo-input input[type="text"] {
     flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-right: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 0.95em;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    transition: border-color 0.2s, background-color 0.3s;
+}
+
+.todo-input input[type="text"]:focus {
+    outline: none;
+    border-color: var(--btn-add);
 }
 
 .todo-input button {
-    background-color: #5cb85c;
+    background-color: var(--btn-add);
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
+    padding: 10px 16px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color 0.2s;
 }
 
 .todo-input button:hover {
-    background-color: #4cae4c;
+    background-color: var(--btn-add-hover);
 }
 
+.task-options {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.task-options select,
+.task-options input {
+    padding: 7px 8px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 0.85em;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    transition: border-color 0.2s, background-color 0.3s;
+}
+
+.task-options select:focus,
+.task-options input:focus {
+    outline: none;
+    border-color: var(--btn-edit);
+}
+
+.task-options input[type="text"] {
+    flex: 1;
+    min-width: 120px;
+}
+
+.task-options input[type="date"] {
+    min-width: 130px;
+}
+
+/* ============================
+   Search & Filter
+   ============================ */
+.search-filter {
+    margin-bottom: 16px;
+    padding: 12px;
+    background-color: var(--filter-bg);
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.search-filter input[type="text"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    transition: border-color 0.2s, background-color 0.3s;
+}
+
+.search-filter input[type="text"]:focus {
+    outline: none;
+    border-color: var(--btn-edit);
+}
+
+.filters {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.filters select {
+    padding: 6px 8px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 0.8em;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    cursor: pointer;
+    flex: 1;
+    min-width: 100px;
+    transition: border-color 0.2s, background-color 0.3s;
+}
+
+.filters select:focus {
+    outline: none;
+    border-color: var(--btn-edit);
+}
+
+/* ============================
+   Task Stats
+   ============================ */
+.task-stats {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 0.8em;
+    color: var(--text-muted);
+}
+
+.task-stats span {
+    padding: 2px 8px;
+    background-color: var(--filter-bg);
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+/* ============================
+   Task List
+   ============================ */
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 ul li {
-    background-color: #f9f9f9;
-    border: 1px solid #eee;
-    padding: 10px;
+    background-color: var(--bg-task);
+    border: 1px solid var(--border-light);
+    padding: 12px;
     margin-bottom: 8px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-radius: 8px;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 ul li.completed {
-    text-decoration: line-through;
-    color: #888;
-    background-color: #e0e0e0;
+    background-color: var(--bg-task-completed);
+    opacity: 0.7;
 }
 
-ul li button {
-    background-color: #d9534f;
-    color: white;
+ul li.completed .task-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+ul li.overdue {
+    background-color: var(--overdue-bg);
+    border-color: var(--overdue-border);
+}
+
+/* Task main row */
+.task-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.priority-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.priority-dot.high { background-color: var(--priority-high); }
+.priority-dot.medium { background-color: var(--priority-medium); }
+.priority-dot.low { background-color: var(--priority-low); }
+
+.task-text {
+    flex: 1;
+    cursor: pointer;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.task-actions {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.task-actions button {
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 0.8em;
+    color: white;
+    transition: background-color 0.2s;
 }
 
-ul li button:hover {
-    background-color: #c9302c;
+.task-actions .btn-complete {
+    background-color: var(--btn-add);
+}
+.task-actions .btn-complete:hover {
+    background-color: var(--btn-add-hover);
+}
+
+.task-actions .btn-edit {
+    background-color: var(--btn-edit);
+}
+.task-actions .btn-edit:hover {
+    background-color: var(--btn-edit-hover);
+}
+
+.task-actions .btn-delete {
+    background-color: var(--btn-delete);
+}
+.task-actions .btn-delete:hover {
+    background-color: var(--btn-delete-hover);
+}
+
+/* Task metadata row */
+.task-meta {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 6px;
+    padding-left: 20px;
+    font-size: 0.78em;
+    color: var(--text-muted);
+}
+
+.task-due {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.task-due.overdue-text {
+    color: var(--priority-high);
+    font-weight: 600;
+}
+
+.task-due.due-today {
+    color: var(--priority-medium);
+    font-weight: 600;
+}
+
+.task-recurring {
+    font-style: italic;
+}
+
+.task-tags {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+/* ============================
+   Edit Panel (inline)
+   ============================ */
+.edit-panel {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--filter-bg);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.edit-panel .edit-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.edit-panel label {
+    font-size: 0.8em;
+    color: var(--text-secondary);
+    min-width: 55px;
+}
+
+.edit-panel input,
+.edit-panel select {
+    padding: 6px 8px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    font-size: 0.85em;
+    flex: 1;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    transition: background-color 0.3s;
+}
+
+.edit-panel .edit-actions {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+}
+
+.edit-panel .edit-actions button {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    color: white;
+}
+
+.edit-panel .btn-save {
+    background-color: var(--btn-add);
+}
+.edit-panel .btn-save:hover {
+    background-color: var(--btn-add-hover);
+}
+
+.edit-panel .btn-cancel {
+    background-color: var(--btn-secondary);
+}
+.edit-panel .btn-cancel:hover {
+    background-color: var(--btn-secondary-hover);
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 24px;
+    font-size: 0.95em;
+}
+
+/* ============================
+   Footer Actions
+   ============================ */
+.footer-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-actions button {
+    background-color: var(--btn-secondary);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.2s;
+}
+
+.footer-actions button:hover {
+    background-color: var(--btn-secondary-hover);
+}
+
+.footer-actions .notify-active {
+    background-color: var(--btn-add);
+}
+
+/* ============================
+   Responsive
+   ============================ */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    .task-options {
+        flex-direction: column;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .task-actions button {
+        padding: 4px 7px;
+        font-size: 0.75em;
+    }
 }

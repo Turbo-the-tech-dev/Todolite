@@ -8,14 +8,73 @@
 </head>
 <body>
     <div class="container">
-        <h1>TodoLite</h1>
+        <div class="header">
+            <h1>TodoLite</h1>
+            <button id="darkModeToggle" class="icon-btn" title="Toggle dark mode">&#9789;</button>
+        </div>
+
+        <!-- Add Task Form -->
         <div class="todo-input">
             <input type="text" id="taskInput" placeholder="Add a new task...">
             <button id="addTaskBtn">Add Task</button>
         </div>
-        <ul id="taskList">
-            <!-- To-do items will be added here -->
-        </ul>
+        <div class="task-options">
+            <select id="priorityInput" title="Priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+            <input type="date" id="dueDateInput" title="Due date">
+            <input type="text" id="tagsInput" placeholder="Tags (comma separated)">
+            <select id="recurringInput" title="Repeat">
+                <option value="">No Repeat</option>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+        </div>
+
+        <!-- Search & Filter -->
+        <div class="search-filter">
+            <input type="text" id="searchInput" placeholder="Search tasks...">
+            <div class="filters">
+                <select id="filterPriority">
+                    <option value="">All Priorities</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+                <select id="filterStatus">
+                    <option value="">All Status</option>
+                    <option value="active">Active</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <select id="filterTag">
+                    <option value="">All Tags</option>
+                </select>
+                <select id="sortBy">
+                    <option value="created">Sort: Created</option>
+                    <option value="priority">Sort: Priority</option>
+                    <option value="dueDate">Sort: Due Date</option>
+                    <option value="name">Sort: Name</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Task Stats -->
+        <div id="taskStats" class="task-stats"></div>
+
+        <!-- Task List -->
+        <ul id="taskList"></ul>
+
+        <!-- Footer Actions -->
+        <div class="footer-actions">
+            <button id="clearCompletedBtn">Clear Completed</button>
+            <button id="notifyBtn" title="Enable browser notifications">Notifications</button>
+            <button id="exportBtn">Export</button>
+            <button id="importBtn">Import</button>
+            <input type="file" id="importFile" accept=".json" style="display:none">
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
