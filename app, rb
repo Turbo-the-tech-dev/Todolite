@@ -1,0 +1,145 @@
+# frozen_string_literal: true
+require 'sinatra'
+require 'sinatra/reloader' if development?
+require 'sqlite3'
+
+set :port, 4567
+set :public_folder, 'public'
+
+# DB setup
+db = SQLite3::Database.new("todolite.db")
+db.results_as_hash = true
+db.execute <<-SQL
+  CREATE TABLE IF NOT EXISTS tasks (
+    id INTEGER PRIMARY KEY,
+    text TEXT NOT NULL,
+    completed INTEGER DEFAULT 0,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  );
+SQL
+
+# Helpers
+def all_tasks
+  db.execute("SELECT * FROM tasks ORDER BY created_at DESC")
+end
+
+# Routes
+get '/' do
+  @tasks = all_tasks
+  erb :index
+end
+
+post '/tasks' do
+  text = params[:text].to_s.strip
+  if text.length > 0 && text.length <= 200
+    db.execute("INSERT INTO tasks (text) VALUES (?)", text)
+  end
+  redirect '/'
+end
+
+post '/tasks/:id/toggle' do
+  db.execute("UPDATE tasks SET completed = (completed + 1) % 2 WHERE id = ?", params[:id])
+  redirect '/'
+end
+
+get '/tasks/:id/edit' do
+  @task = db.execute("SELECT * FROM tasks WHERE id = ?", params[:id]).first
+  erb :edit
+end
+
+post '/tasks/:id' do
+  text = params[:text].to_s.strip
+  if text.length > 0 && text.length <= 200
+    db.execute("UPDATE tasks SET text = ? WHERE id = ?", text, params[:id])
+  end
+  redirect '/'
+end
+
+post '/tasks/:id/delete' do
+  db.execute("DELETE FROM tasks WHERE id = ?", params[:id])
+  redirect '/'
+end
+
+__END__
+
+@@ index
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todolite • Ruby</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: system-ui, sans-serif; }
+    .completed { text-decoration: line-through; opacity: 0.6; }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen py-12">
+  <div class="max-w-md mx-auto px-4">
+    <h1 class="text-5xl font-bold text-center mb-2 text-emerald-400">Todolite</h1>
+    <p class="text-center text-zinc-500 mb-10">Ruby Edition • Powered by Sinatra + SQLite</p>
+
+    <form action="/tasks" method="post" class="flex gap-3 mb-10">
+      <input type="text" name="text" maxlength="200" placeholder="What needs to be done?" 
+             class="flex-1 bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-emerald-500 text-lg" required>
+      <button type="submit" class="bg-emerald-500 hover:bg-emerald-600 px-10 rounded-2xl font-semibold text-lg transition">
+        Add
+      </button>
+    </form>
+
+    <div class="space-y-3">
+      <% @tasks.each do |task| %>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-5 flex items-center group">
+          <form action="/tasks/<%= task['id'] %>/toggle" method="post" class="mr-4">
+            <button type="submit" class="w-7 h-7 rounded-xl border-2 <%= task['completed'] == 1 ? 'bg-emerald-500 border-emerald-500 text-white' : 'border-zinc-600 hover:border-zinc-400' %> flex items-center justify-center transition">
+              <%= task['completed'] == 1 ? '✓' : '' %>
+            </button>
+          </form>
+
+          <span class="flex-1 text-xl <%= task['completed'] == 1 ? 'completed' : '' %>">
+            <%= task['text'] %>
+          </span>
+
+          <div class="flex gap-2 opacity-0 group-hover:opacity-100 transition">
+            <a href="/tasks/<%= task['id'] %>/edit" class="text-blue-400 hover:text-blue-300 px-3 py-1 text-sm font-medium">edit</a>
+            <form action="/tasks/<%= task['id'] %>/delete" method="post" onsubmit="return confirm('Delete this task?')">
+              <button type="submit" class="text-red-400 hover:text-red-300 px-3 py-1 text-sm font-medium">delete</button>
+            </form>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <% if @tasks.empty? %>
+      <div class="text-center py-20 text-zinc-600">
+        <i class="fa-solid fa-clipboard-list text-6xl mb-4"></i>
+        <p class="text-xl">No tasks yet. Add one above!</p>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>
+
+@@ edit
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Task • Todolite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen flex items-center justify-center">
+  <div class="max-w-md w-full bg-zinc-900 rounded-3xl p-10">
+    <h1 class="text-3xl font-bold mb-8">Edit Task</h1>
+    <form action="/tasks/<%= @task['id'] %>" method="post">
+      <input type="text" name="text" value="<%= @task['text'] %>" maxlength="200"
+             class="w-full bg-zinc-800 border border-zinc-700 rounded-2xl px-6 py-4 text-xl focus:outline-none focus:border-emerald-500">
+      <div class="flex gap-4 mt-8">
+        <a href="/" class="flex-1 text-center py-4 bg-zinc-800 hover:bg-zinc-700 rounded-2xl font-medium">Cancel</a>
+        <button type="submit" class="flex-1 py-4 bg-emerald-500 hover:bg-emerald-600 rounded-2xl font-semibold">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
